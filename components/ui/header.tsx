@@ -1,64 +1,64 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-
-import Link from "next/link";
-import Logo from "./logo";
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Logo from './logo';
+import Drawer from '../drawer';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
+import SchoolOutlinedIcon from '@mui/icons-material/SchoolOutlined';
+import MemoryOutlinedIcon from '@mui/icons-material/MemoryOutlined';
 
 export default function Header() {
   const [top, setTop] = useState<boolean>(true);
 
-  // detect whether user has scrolled the page down by 10px
-  const scrollHandler = () => {
-    window.pageYOffset > 10 ? setTop(false) : setTop(true);
-  };
-
-  useEffect(() => {
-    scrollHandler();
-    window.addEventListener("scroll", scrollHandler);
-    return () => window.removeEventListener("scroll", scrollHandler);
-  }, [top]);
-
   return (
-    <header className="fixed z-30 w-full ">
-        <div className="relative flex h-16 items-center justify-between gap-3 bg-white/90 px-32 shadow-lg shadow-black/[0.03] backdrop-blur-sm before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:border before:border-transparent before:[background:linear-gradient(theme(colors.gray.100),theme(colors.gray.200))_border-box] before:[mask-composite:exclude_!important] before:[mask:linear-gradient(white_0_0)_padding-box,_linear-gradient(white_0_0)]">
-          {/* Site branding */}
-          <div className="flex flex-1 items-center">
-            <Logo />
-          </div>
-
-          <ul className="flex flex-1 items-center gap-10">
-            <li>
-              <Link
-                href="/signup"
-                className=" text-black "
-              >
-               Abount Us
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/signup"
-                className=" text-black "
-              >
-                Burrito College
-              </Link>
-            </li>
-
-          </ul>
-
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <Link
-                href="/signup"
-                className="btn-sm bg-blue-700 text-gray-200 shadow hover:bg-gray-900"
-              >
-                Connet Wallet
-              </Link>
-            </li>
-          </ul>
+    <header className="fixed z-30 w-full bg-white shadow-lg">
+      <div className="relative flex h-16 items-center px-6 sm:px-32 sm:gap-32 justify-between sm:justify-start">
+        {/* Site branding */}
+        <div className="flex items-center">
+          <Logo />
         </div>
+
+        {/* Hamburger menu button */}
+        <div className="sm:hidden">
+          <Drawer></Drawer>
+        </div>
+
+        {/* Navigation links */}
+        <ul className="hidden sm:flex items-center gap-16">
+          <li className="flex items-center gap-2">
+            <InfoOutlinedIcon sx={{ color: 'grey' }} />
+            <Link
+              href="/#features-planet"
+              className="text-gray-500 block py-2 px-2"
+            >
+              About Us
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <MemoryOutlinedIcon sx={{ color: 'grey' }} />
+            <Link
+              href="/#burrito-node"
+              className="text-gray-500 block py-2 px-2"
+            >
+              Burrito Node
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <SchoolOutlinedIcon sx={{ color: 'grey' }} />
+            <Link href="/college" className="text-gray-500 block py-2 px-2">
+              Burrito College
+            </Link>
+          </li>
+          <li className="flex items-center gap-2">
+            <MonitorHeartOutlinedIcon sx={{ color: 'grey' }} />
+            <Link href="/monitor" className="text-gray-500 block py-2 px-2">
+              Burrito Monitor
+            </Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 }

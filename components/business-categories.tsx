@@ -1,13 +1,13 @@
-import Image from "next/image";
-import Logo01 from "@/public/images/logo-01.svg";
-import Logo02 from "@/public/images/logo-02.svg";
-import Logo03 from "@/public/images/logo-03.svg";
-import Logo04 from "@/public/images/logo-04.svg";
-import Logo05 from "@/public/images/logo-05.svg";
-import Logo06 from "@/public/images/logo-06.svg";
-import Logo07 from "@/public/images/logo-07.svg";
-import Logo08 from "@/public/images/logo-08.svg";
-import Logo09 from "@/public/images/logo-09.svg";
+import Image from 'next/image';
+import BurritoLogo from '@/public/images/BurritoLogo.png';
+import Logo02 from '@/public/images/logo-02.svg';
+import Logo03 from '@/public/images/logo-03.svg';
+import Logo04 from '@/public/images/logo-04.svg';
+import Logo05 from '@/public/images/logo-05.svg';
+import Logo06 from '@/public/images/logo-06.svg';
+import Logo07 from '@/public/images/logo-07.svg';
+import Logo08 from '@/public/images/logo-08.svg';
+import Logo09 from '@/public/images/logo-09.svg';
 
 export default function BusinessCategories() {
   return (
@@ -179,9 +179,9 @@ export default function BusinessCategories() {
                 <div className="flex h-24 w-24 items-center justify-center rounded-full bg-white shadow-lg shadow-black/[0.03] before:absolute before:inset-0 before:m-[8.334%] before:rounded-[inherit] before:border before:border-gray-700/5 before:bg-gray-200/60 before:[mask-image:linear-gradient(to_bottom,black,transparent)]">
                   <Image
                     className="relative"
-                    src={Logo01}
-                    width={32}
-                    height={32}
+                    src={BurritoLogo}
+                    width={64}
+                    height={64}
                     alt="Logo 01"
                   />
                 </div>

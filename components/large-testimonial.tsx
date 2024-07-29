@@ -1,10 +1,14 @@
-import Image from "next/image";
-import TestimonialImg from "@/public/images/large-testimonial.jpg";
+import Image from 'next/image';
+import TestimonialImg from '@/public/images/large-testimonial.jpg';
 
 export default function LargeTestimonial() {
   return (
-    <section>
-      <div className="mx-auto max-w-2xl px-4 sm:px-6">
+    <section className="bg-gray-900">
+      <div
+        className="mx-auto max-w-2xl px-4 sm:px-6   "
+        data-aos="zoom-y-out"
+        data-aos-delay={150}
+      >
         <div className="py-12 md:py-20">
           <div className="space-y-3 text-center">
             <div className="relative inline-flex">
@@ -29,17 +33,20 @@ export default function LargeTestimonial() {
                 alt="Large testimonial"
               />
             </div>
-            <p className="text-2xl font-bold text-gray-900">
-              “Simple has simplified my life in more ways than one. From
-              managing my sites to{" "}
-              <em className="italic text-gray-500">keeping track of tasks</em>,
-              it's become my go-to tool for everything.”
+            <p className="text-2xl font-bold text-white">
+              “Burrito Lab is on the verge of completing its most ambitious
+              project yet{' '}
+              <em className="italic text-blue-400">
+                delivering unprecedented value{' '}
+              </em>
+              to our users and setting new standards in the blockchain
+              industry.”
             </p>
             <div className="text-sm font-medium text-gray-500">
-              <span className="text-gray-700">Mary Sullivan</span>{" "}
-              <span className="text-gray-400">/</span>{" "}
+              <span className="text-white">J Feng</span>{' '}
+              <span className="text-gray-400">/</span>{' '}
               <a className="text-blue-500" href="#0">
-                CTO at Microsoft
+                Manager In Burrito Lab
               </a>
             </div>
           </div>
