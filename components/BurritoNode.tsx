@@ -48,10 +48,10 @@ const BurritoNode = () => {
           and security of the Terra Classic ecosystem.
         </div>
         <ul>
-          <li className="pt-5 text-xl font-semibold text-blue-600">
+          <li className="pt-5 text-xl font-semibold text-green-600">
             Low Commission Fee
           </li>
-          <li className="pt-5 text-xl font-semibold text-blue-600">
+          <li className="pt-5 text-xl font-semibold text-green-600">
             High Stability
           </li>
         </ul>
