@@ -6,6 +6,7 @@ import SendIcon from '@mui/icons-material/Send';
 import RadarAnimation from './RadarAnimation';
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import bg from '@/public/images/bg2.jpg';
 
 const BurritoNode = () => {
   const { ref, inView } = useInView({
@@ -28,10 +29,15 @@ const BurritoNode = () => {
       <section
         id="burrito-node"
         ref={ref}
-        className="py-10 px-10 text-center sm:p-20 sm:px-60 flex flex-col sm:flex-row sm:justify-around animate-fadeIn"
+        className="py-10 px-10 text-center sm:p-20 sm:px-60 flex flex-col sm:flex-row sm:justify-around animate-fadeIn wrapper image-wrapper bg-image bg-overlay text-white"
+        style={{
+          backgroundImage: `url(${bg.src})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
       >
         <div className="max-w-xl" data-aos="zoom-y-out" data-aos-delay={150}>
-          <div className="text-5xl p-8 font-sans font-bold text-blue-600 tracking-wide  ">
+          <div className="text-5xl p-8 font-sans font-bold tracking-wide  ">
             Burrito Node
           </div>
           <div className="text-lg leading-relaxed">
@@ -42,11 +48,11 @@ const BurritoNode = () => {
             overall stability and security of the Terra Classic ecosystem.
           </div>
           <ul>
-            <li className="pt-5 text-xl font-semibold text-green-600">
-              Low Commission Fee!! 💥
+            <li className="pt-5 text-xl font-semibold text-blue-600">
+              Low Commission Fee
             </li>
-            <li className="pt-5 text-xl font-semibold text-green-600">
-              High Stability!! 💥
+            <li className="pt-5 text-xl font-semibold text-blue-600">
+              High Stability
             </li>
           </ul>
           <div className="py-10 animate-bounce">
@@ -54,6 +60,12 @@ const BurritoNode = () => {
               variant="contained"
               endIcon={<SendIcon />}
               className="bg-blue-600 rounded-full shadow-lg mt-5"
+              onClick={() =>
+                window.open(
+                  'https://station.terra.money/validator/terravaloper16x9dcx9pm9j8ykl0td4hptwule706ysjel6500',
+                  '_blank',
+                )
+              }
             >
               Stake With Us
             </Button>
@@ -61,21 +73,29 @@ const BurritoNode = () => {
         </div>
         <div className="flex-col">
           <RadarAnimation />
-          <div className="flex justify-center">
-            {inView && (
-              <div className="text-2xl">
-                <CountUp end={20000} />
+          <div className="flex items-center">
+            <div>
+              <div className="text-xl pb-3"> Staked</div>
+              <div className="flex justify-center px-5">
+                {inView && (
+                  <div className="text-3xl font-semibold">
+                    <CountUp end={20234697703} />
+                  </div>
+                )}
+                <span className="flex items-center pl-3 text-lg"> Lunc</span>
               </div>
-            )}
-            <span className="flex items-center pl-3 text-lg">+ B Lunc</span>
-          </div>
-          <div className="flex justify-center">
-            {inView && (
-              <div className="text-2xl">
-                <CountUp end={daysSince} />
+            </div>
+            <div>
+              <div className="text-xl pb-3"> Onlined</div>
+              <div className="flex justify-center px-5">
+                {inView && (
+                  <div className="text-3xl font-semibold">
+                    <CountUp end={daysSince} />
+                  </div>
+                )}
+                <span className="flex items-center pl-3 text-lg">days</span>
               </div>
-            )}
-            <span className="flex items-center pl-3 text-lg">days</span>
+            </div>
           </div>
         </div>
       </section>
