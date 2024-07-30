@@ -10,13 +10,16 @@ import MonitorHeartOutlinedIcon from '@mui/icons-material/MonitorHeartOutlined';
 import CurrencyExchangeOutlinedIcon from '@mui/icons-material/CurrencyExchangeOutlined';
 import MemoryOutlinedIcon from '@mui/icons-material/MemoryOutlined';
 
+// import bgStyles from '@/styles/Background.module.css';
+// import bg from '@/public/images/bg4.jpg';
+
 import { colors } from '@mui/material';
 
 export default function FeaturesPlanet() {
   return (
     <section
       id="features-planet"
-      className="relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900"
+      className={`relative before:absolute before:inset-0 before:-z-20 before:bg-gray-900`}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">

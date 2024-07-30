@@ -7,9 +7,12 @@ import Avatar04 from '@/public/images/avatar-04.jpg';
 import Avatar05 from '@/public/images/avatar-05.jpg';
 import Avatar06 from '@/public/images/avatar-06.jpg';
 
+// import bgStyles from '@/styles/Background.module.css';
+// import bg from '@/public/images/bg4.jpg';
+
 export default function HeroHome() {
   return (
-    <section className="relative">
+    <section className="relative ">
       <PageIllustration />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
