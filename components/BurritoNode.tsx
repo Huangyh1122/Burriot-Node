@@ -28,7 +28,6 @@ const BurritoNode = () => {
   return (
     <section
       id="burrito-node"
-      ref={ref}
       className={`${bgStyles.bgImage} ${bgStyles.overlay} py-10 px-10 text-center sm:p-20 sm:px-60 flex flex-col sm:flex-row sm:justify-around animate-fadeIn`}
       style={{ backgroundImage: `url(${bg.src})` }}
     >
@@ -73,7 +72,7 @@ const BurritoNode = () => {
       </div>
       <div className={`${bgStyles.content} flex-col`}>
         <RadarAnimation />
-        <div className="flex-col items-center md:flex-row ">
+        <div className="flex-col items-center md:flex-row " ref={ref}>
           <div>
             <div className="text-xl p-5">Total Stake</div>
             <div className="flex justify-center px-5">
