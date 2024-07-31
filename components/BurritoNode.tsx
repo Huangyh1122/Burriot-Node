@@ -73,9 +73,9 @@ const BurritoNode = () => {
       </div>
       <div className={`${bgStyles.content} flex-col`}>
         <RadarAnimation />
-        <div className="flex items-center">
+        <div className="flex-col items-center md:flex-row ">
           <div>
-            <div className="text-xl pb-3">Total Stake</div>
+            <div className="text-xl p-5">Total Stake</div>
             <div className="flex justify-center px-5">
               {inView && (
                 <div className="text-3xl font-semibold">
@@ -86,7 +86,7 @@ const BurritoNode = () => {
             </div>
           </div>
           <div>
-            <div className="text-xl pb-3">Onlined</div>
+            <div className="text-xl p-5">Onlined</div>
             <div className="flex justify-center px-5">
               {inView && (
                 <div className="text-3xl font-semibold">
