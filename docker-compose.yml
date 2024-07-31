@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  frontend-prod:
+    restart: always
+    image: "yizhouli/burrito-lab:lasted"
+    ports:
+      - "8500:3000"
+    environment:
+      - NODE_ENV=prod
