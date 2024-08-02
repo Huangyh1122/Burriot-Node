@@ -5,8 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 import { Divider, useMediaQuery, useTheme } from '@mui/material';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Tooltip } from '@mui/material';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const StakeDetail = () => {
   const { ref, inView } = useInView({
