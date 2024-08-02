@@ -38,7 +38,7 @@ const StakeDetail = () => {
 
   const handleCopy = () => {
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -101,7 +101,7 @@ const StakeDetail = () => {
               <span className="text-white py-2 px-4">{displayAddress}</span>
             </div>
             <CopyToClipboard text={fullAddress} onCopy={handleCopy}>
-              <Tooltip title={copied ? 'Copied!' : 'Copy'}>
+              <Tooltip title={copied ? 'Copied!' : 'Copy'} enterTouchDelay={0}>
                 <FileCopyOutlinedIcon className="ml-4 text-white cursor-pointer" />
               </Tooltip>
             </CopyToClipboard>
