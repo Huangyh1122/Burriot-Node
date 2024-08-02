@@ -6,4 +6,4 @@ services:
     ports:
       - "8500:3000"
     environment:
-      - NODE_ENV=prod
+      - NODE_ENV=production

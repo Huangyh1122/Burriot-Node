@@ -6,6 +6,7 @@ import Avatar03 from '@/public/images/avatar-03.jpg';
 import Avatar04 from '@/public/images/avatar-04.jpg';
 import Avatar05 from '@/public/images/avatar-05.jpg';
 import Avatar06 from '@/public/images/avatar-06.jpg';
+import Head from 'next/head';
 
 // import bgStyles from '@/styles/Background.module.css';
 // import bg from '@/public/images/bg4.jpg';
@@ -13,6 +14,37 @@ import Avatar06 from '@/public/images/avatar-06.jpg';
 export default function HeroHome() {
   return (
     <section className="relative ">
+      <Head>
+        <title>Burrito Lab - All-in-One Blockchain Services Hub</title>
+        <meta
+          name="description"
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+        />
+        <meta
+          name="keywords"
+          content="Burrito Lab, Blockchain Services, Luna Blockchain, Transaction Monitoring, Analytics, Blockchain Hub"
+        />
+        <meta
+          property="og:title"
+          content="Burrito Lab - All-in-One Blockchain Services Hub"
+        />
+        <meta
+          property="og:description"
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+        />
+        <meta property="og:image" content="/public/images/bg4.jpg" />
+        <meta property="og:url" content="https://burrito.money" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Burrito Lab - All-in-One Blockchain Services Hub"
+        />
+        <meta
+          name="twitter:description"
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+        />
+        <meta name="twitter:image" content="/public/images/bg4.jpg" />
+      </Head>
       <PageIllustration />
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Hero content */}
