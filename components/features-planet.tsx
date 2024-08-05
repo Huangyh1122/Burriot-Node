@@ -134,7 +134,7 @@ export default function FeaturesPlanet() {
               <p className="text-[15px] text-gray-400">
                 A comprehensive platform for monitoring on-chain transactions,
                 node information, network performance, security metrics, and
-                blockchain analytics on the Luna Classic blockchain.
+                blockchain analytics on the Terra Classic blockchain.
               </p>
             </article>
             <article>

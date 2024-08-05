@@ -18,11 +18,11 @@ export default function HeroHome() {
         <title>Burrito Lab - All-in-One Blockchain Services Hub</title>
         <meta
           name="description"
-          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Terra Classic blockchain."
         />
         <meta
           name="keywords"
-          content="Burrito Lab, Blockchain Services, Luna Blockchain, Transaction Monitoring, Analytics, Blockchain Hub"
+          content="Burrito Lab, Blockchain Services, Terra Classic blockchain, Transaction Monitoring, Analytics, Blockchain Hub"
         />
         <meta
           property="og:title"
@@ -30,7 +30,7 @@ export default function HeroHome() {
         />
         <meta
           property="og:description"
-          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Terra Classic blockchain."
         />
         <meta property="og:image" content="/public/images/bg4.jpg" />
         <meta property="og:url" content="https://burrito.money" />
@@ -41,7 +41,7 @@ export default function HeroHome() {
         />
         <meta
           name="twitter:description"
-          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Luna blockchain."
+          content="Burrito Lab offers comprehensive multichain services for advanced transaction monitoring, analytics, and beyond, focusing on developing advanced technologies on the Terra Classic blockchain."
         />
         <meta name="twitter:image" content="/public/images/bg4.jpg" />
       </Head>
