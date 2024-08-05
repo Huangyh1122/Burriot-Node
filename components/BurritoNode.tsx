@@ -38,11 +38,12 @@ const BurritoNode = () => {
         <RadarAnimation />
       </div>
       <StakeDetail />
-      <div className="py-10 animate-bounce text-center mt-5">
+      <div className="py-10 animate-bounce text-center mt-20">
         <Button
           variant="contained"
           endIcon={<SendIcon />}
-          className="bg-blue-600 rounded-full shadow-lg"
+          className="bg-blue-600 shadow-lg w-56 h-16 text-4xl"
+          style={{ fontSize: '20px', borderRadius: '30px' }}
           onClick={() =>
             window.open(
               'https://station.terra.money/validator/terravaloper16x9dcx9pm9j8ykl0td4hptwule706ysjel6500',

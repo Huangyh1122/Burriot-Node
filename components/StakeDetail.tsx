@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import bg from '@/public/images/bg2.jpg';
 import bgStyles from '@/styles/Background.module.css';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
