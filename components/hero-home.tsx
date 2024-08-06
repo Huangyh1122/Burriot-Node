@@ -162,7 +162,7 @@ export default function HeroHome() {
                 </span>{' '}
                 <br />
                 <span className="animate-[code-2_10s_infinite]">
-                  --focusing on developing advanced technologies on the Luna
+                  --focusing on developing advanced technologies on the Terra
                   blockchain, aiming to integrate a wide range of services into
                   a unified platform.
                 </span>
@@ -181,7 +181,7 @@ export default function HeroHome() {
                 </span>
                 <br />
                 <span className="animate-[code-5_10s_infinite]">
-                  Our mission is to establish a one-stop webapp for the Luna
+                  Our mission is to establish a one-stop webapp for the Terra
                   Classic chain ecosystem, offering comprehensive monitoring and
                   valuable insights. We aim to foster a more secure and
                   efficient blockchain community, empowering users and
