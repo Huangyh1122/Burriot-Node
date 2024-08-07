@@ -19,7 +19,13 @@ export default function Header() {
 
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleDisconnectClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleConnectClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -76,7 +82,7 @@ export default function Header() {
               <Button
                 id="disconnect-button"
                 variant="contained"
-                onClick={handleClick}
+                onClick={handleDisconnectClick}
                 sx={{
                   fontWeight: '700',
                   borderRadius: '12px',
@@ -126,12 +132,10 @@ export default function Header() {
               </Popover>
             </>
           ) : (
-            availableWallets.map(({ id, name, isInstalled }) => (
+            <>
               <Button
                 variant="contained"
-                onClick={() => connect(id)}
-                disabled={!isInstalled}
-                key={id}
+                onClick={handleConnectClick}
                 endIcon={<WalletIcon />}
                 sx={{
                   fontWeight: '700',
@@ -141,7 +145,51 @@ export default function Header() {
               >
                 Connect Wallet
               </Button>
-            ))
+              <Popover
+                id="connect-popover"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'right',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                slotProps={{
+                  paper: {
+                    style: {
+                      marginTop: '10px',
+                      borderRadius: '10px',
+                    },
+                  },
+                }}
+              >
+                <div className="p-2">
+                  {availableWallets.map(({ id, name, isInstalled }) => (
+                    <div
+                      key={id}
+                      className={`hover:bg-gray-300 rounded-md flex p-2 cursor-pointer ${!isInstalled && 'opacity-50'}`}
+                      onClick={() => isInstalled && connect(id)}
+                    >
+                      <div className="mr-3 text-s tracking-wide">{name}</div>
+                      {name === 'Browser Extension' ||
+                      name === 'Station Mobile App' ? (
+                        <img
+                          src="/images/TerraStationLogo.svg"
+                          alt="Terra Station Logo"
+                          className="h-6 w-6"
+                        />
+                      ) : (
+                        <></>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </Popover>
+            </>
           )}
         </div>
       </div>

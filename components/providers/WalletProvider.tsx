@@ -6,6 +6,7 @@ import {
   getInitialConfig,
   InfoResponse,
 } from '@terra-money/wallet-kit';
+import TerraStationMobileWallet from '@terra-money/terra-station-mobile';
 
 interface WalletProviderWrapperProps {
   children: ReactNode;
@@ -29,7 +30,10 @@ const WalletProviderWrapper: React.FC<WalletProviderWrapperProps> = ({
   }
 
   return (
-    <WalletProvider defaultNetworks={defaultNetworks}>
+    <WalletProvider
+      defaultNetworks={defaultNetworks}
+      extraWallets={[new TerraStationMobileWallet()]}
+    >
       {children}
     </WalletProvider>
   );
