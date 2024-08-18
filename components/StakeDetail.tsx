@@ -6,6 +6,7 @@ import { Divider, useMediaQuery, useTheme } from '@mui/material';
 import FileCopyOutlinedIcon from '@mui/icons-material/FileCopyOutlined';
 import { Tooltip } from '@mui/material';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import Meteors from '@/components/magicui/Meteors';
 
 const StakeDetail = () => {
   const { ref, inView } = useInView({
@@ -43,10 +44,11 @@ const StakeDetail = () => {
   return (
     <>
       <div
-        className="max-w-xs mx-auto sm:max-w-4xl bg-gray-900 rounded-2xl "
+        className="max-w-xs mx-auto sm:max-w-4xl bg-gray-900 rounded-2xl truncate"
         data-aos="zoom-y-out"
         data-aos-delay={150}
       >
+        <Meteors number={30} />
         <div className={`${bgStyles.content} p-4`}>
           <div className="flex flex-col items-center md:flex-row" ref={ref}>
             <div className="w-full dm:w-80 p-3">

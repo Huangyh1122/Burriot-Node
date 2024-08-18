@@ -25,7 +25,6 @@ export default function Cta() {
               className="max-w-none"
               src={Stripes}
               width={768}
-              height={432}
               alt="Stripes"
             />
           </div>
