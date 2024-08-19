@@ -1,3 +1,5 @@
+'use client';
+
 import { useConnectedWallet, useLcdClient } from '@terra-money/wallet-kit';
 import React, { useEffect, useState } from 'react';
 import ShineBorder from '@/components/magicui/ShineBorder';
@@ -87,11 +89,16 @@ const wallet = () => {
                       const formattedAmount =
                         new Intl.NumberFormat().format(Number(integerPart)) +
                         (decimalPart ? `.${decimalPart}` : '');
+                      let amountInUSD;
 
-                      const tokenPrice = tokenPrices[id.toLowerCase()] || 0;
-                      const amountInUSD = (
-                        Number(rawAmount) * tokenPrice
-                      ).toFixed(2);
+                      if (tokenPrices !== null) {
+                        const tokenPrice = tokenPrices[id.toLowerCase()] || 0;
+                        amountInUSD = (Number(rawAmount) * tokenPrice).toFixed(
+                          2,
+                        );
+                      } else {
+                        amountInUSD = 'N/A';
+                      }
 
                       return (
                         <div

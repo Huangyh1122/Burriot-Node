@@ -1,6 +1,7 @@
 'use client';
 import * as React from 'react';
 import { useState } from 'react';
+import Link from 'next/link';
 import WalletOutlinedIcon from '@mui/icons-material/WalletOutlined';
 import Logo from '@/components/ui/logo';
 import ShimmerButton from '@/components/magicui/ShimmerButton';
@@ -11,9 +12,12 @@ import WalletIcon from '@mui/icons-material/Wallet';
 import AccountBalanceOutlinedIcon from '@mui/icons-material/AccountBalanceOutlined';
 import Wallet from './wallet';
 import Staking from './Staking';
-import Link from 'next/link';
 
-export default function Header() {
+export default function StationLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const [selectedButton, setSelectedButton] = useState<number>(1);
   const buttons = [
     {
@@ -30,6 +34,7 @@ export default function Header() {
           <WalletIcon className="ml-2 h-4 w-4"></WalletIcon>
         </span>
       ),
+      href: '/station/wallet',
     },
     {
       id: 2,
@@ -45,9 +50,9 @@ export default function Header() {
           <AccountBalanceOutlinedIcon className="ml-2 h-4 w-4"></AccountBalanceOutlinedIcon>
         </span>
       ),
+      href: '/station/staking',
     },
   ];
-
   return (
     <div className="h-screen bg-black flex">
       <header className="fixed h-full shadow-lg pt-6 w-72">
@@ -69,14 +74,19 @@ export default function Header() {
                   className="py-3 flex justify-center content-center"
                   key={button.id}
                 >
-                  <AnimatedSubscribeButton
-                    buttonColor="#000000"
-                    buttonTextColor="#ffffff"
-                    initialText={button.initialText}
-                    changeText={button.changeText}
-                    isSelected={selectedButton === button.id}
+                  <Link
+                    href={button.href}
                     onClick={() => setSelectedButton(button.id)}
-                  />
+                  >
+                    <AnimatedSubscribeButton
+                      buttonColor="#000000"
+                      buttonTextColor="#ffffff"
+                      initialText={button.initialText}
+                      changeText={button.changeText}
+                      isSelected={selectedButton === button.id}
+                      onClick={() => {}}
+                    />
+                  </Link>
                 </div>
               ))}
             </div>
@@ -84,28 +94,9 @@ export default function Header() {
         </div>
       </header>
 
-      <div className="flex-1 pl-80 ">
-        <div
-          style={{
-            display: selectedButton === 1 ? 'block' : 'none',
-            height: '100%',
-          }}
-        >
-          <Wallet />
-        </div>
-        <div
-          style={{
-            display: selectedButton === 2 ? 'block' : 'none',
-            height: '100%',
-          }}
-        >
-          <Staking />
-        </div>
-        {!selectedButton && (
-          <div className="flex items-center justify-center h-full text-white">
-            <p>Please select an option</p>
-          </div>
-        )}
+      <div className="flex-1 pl-80">
+        {/* Render the selected page (Wallet or Staking) */}
+        {children}
       </div>
     </div>
   );

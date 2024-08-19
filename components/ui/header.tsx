@@ -22,7 +22,10 @@ export default function Header() {
             <ul className="hidden sm:flex items-center gap-16">
               <li className="flex items-center gap-2">
                 <HubOutlinedIcon sx={{ color: 'grey' }} />
-                <Link href="/station" className="text-gray-500 block py-2 px-2">
+                <Link
+                  href="/station/wallet"
+                  className="text-gray-500 block py-2 px-2"
+                >
                   Burrito Station
                 </Link>
               </li>
